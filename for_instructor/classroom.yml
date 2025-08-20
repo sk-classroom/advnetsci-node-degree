@@ -1,0 +1,73 @@
+name: Autograding Tests
+'on':
+- push
+- repository_dispatch
+permissions:
+  checks: write
+  actions: read
+  contents: read
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test Degree Distribution
+      id: test_degree_distribution
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Degree Distribution Implementation
+        command: python tests/test_01.py
+        timeout: 30
+        max-score: 25
+    - name: Test Friendship Paradox
+      id: test_friendship_paradox
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Friendship Paradox Statistics
+        command: python tests/test_02.py
+        timeout: 30
+        max-score: 25
+    - name: Test CCDF Calculation
+      id: test_ccdf
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: CCDF Calculation
+        command: python tests/test_03.py
+        timeout: 30
+        max-score: 25
+    - name: Test Degree-Biased Sampling
+      id: test_sampling
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Degree-Biased Sampling
+        command: python tests/test_04.py
+        timeout: 30
+        max-score: 25
+    - name: Grade Quiz
+      id: test_quiz
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Conceptual Quiz
+        command: bash grading/run_quiz_test.sh
+        timeout: 60
+        max-score: 30
+    - name: Autograding Reporter
+      uses: classroom-resources/autograding-grading-reporter@v1
+      env:
+        TEST_DEGREE_DISTRIBUTION_RESULTS: "${{steps.test_degree_distribution.outputs.result}}"
+        TEST_FRIENDSHIP_PARADOX_RESULTS: "${{steps.test_friendship_paradox.outputs.result}}"
+        TEST_CCDF_RESULTS: "${{steps.test_ccdf.outputs.result}}"
+        TEST_SAMPLING_RESULTS: "${{steps.test_sampling.outputs.result}}"
+        TEST_QUIZ_RESULTS: "${{steps.test_quiz.outputs.result}}"
+      with:
+        runners: test_degree_distribution,test_friendship_paradox,test_ccdf,test_sampling,test_quiz

@@ -1,0 +1,7 @@
+[[questions]]
+question = "What is the friendship paradox?"
+answer = "The friendship paradox is the observation that most people have more friends than the average person. This is because popular friends appear more frequently in the friend list of others."
+
+[[questions]]
+question = "What is the degree of a node in a network?"
+answer = "The total transmission routes removed equals the sum of degrees of all vaccinated nodes. For example, if you vaccinate nodes with degrees [5, 3, 7], you remove 5+3+7=15 transmission routes. This metric is useful because: (1) It directly measures the network's transmission capacity reduction; (2) It's simple to calculate and compare across strategies; (3) It captures the intuition that removing high-degree nodes has disproportionate impact; (4) It provides a clear optimization target for vaccination strategies; (5) It scales appropriately with network size and density, making it useful for comparing strategies across different network types."
