@@ -1,114 +1,55 @@
-# Network Immunization Strategy Assignment
+# Assignment Tasks
 
-## Overview
 
-This assignment focuses on implementing and evaluating vaccination strategies to maximize transmission route removal in networks. You'll explore how network structure influences the effectiveness of different immunization approaches and test strategies based on their ability to remove network transmission capacity.
+This assignment requires you to complete two main tasks and submit your work to GitHub. You will need to implement Python functions marked with special comments and create a quiz file with challenging questions that test your understanding of course concepts.
 
-## Learning Objectives
+## Task 1: Function Implementation
 
-By completing this assignment, you will:
-
-1. **Implement vaccination strategies**: Learn random and degree-based node selection for immunization
-2. **Calculate transmission routes removed**: Understand how vaccination reduces network transmission capacity
-3. **Evaluate strategy effectiveness**: Compare vaccination approaches using the 1.5x improvement benchmark
-4. **Apply network theory**: Connect degree centrality to epidemic control strategies
-
-## Assignment Tasks
-
-### Task 1: Function Implementation (100 points)
 
 <p align="center">
-  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgDC8T-6_7wMK9PWpXbRm7FUU2iMMhvAE0YFYX9RcA4PXLGNDJJFW6anUa4tBtIj42AFVQFwI0BN7i4gWNu9ZGcgE-tdx6dbKzvrORIVB9AEyjjdTDkKG4StslIvz8wkHiTiEKORptbXB54/s1600/computer_screen_programming.png" alt="Implementation" width="30%"/>
+  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgDC8T-6_7wMK9PWpXbRm7FUU2iMMhvAE0YFYX9RcA4PXLGNDJJFW6anUa4tBtIj42AFVQFwI0BN7i4gWNu9ZGcgE-tdx6dbKzvrORIVB9AEyjjdTDkKG4StslIvz8wkHiTiEKORptbXB54/s1600/computer_screen_programming.png" alt="Quiz Dojo" width="30%"/>
 </p>
 
-Your main task involves working with the `assignment.py` file using the marimo notebook interface. You need to implement four key functions:
+Your first task involves working with the `assignment.py` file using the marimo notebook interface. Throughout this file, you will find functions that are marked with `#TASK` comments in their docstrings. These functions contain placeholder implementations that you need to replace with working code. Each function includes a detailed docstring that specifies the expected input parameters and return values.
 
-1. **`random_vaccination_strategy(g, num_vaccines)`** - Select nodes randomly for vaccination
-2. **`degree_based_vaccination_strategy(g, num_vaccines)`** - Target highest-degree nodes for vaccination  
-3. **`calculate_transmission_routes_removed(g, vaccinated_nodes)`** - Calculate total transmission routes removed by vaccination
-4. **`evaluate_vaccination_strategy(g, strategy_func, ...)`** - Evaluate strategies using the 1.5x improvement benchmark
+## Task 2: Quiz Creation
 
-Each function includes detailed docstrings with examples and implementation hints. The interactive dashboard lets you test your implementations and compare strategies in real-time on different network types.
-
-### Task 2: Quiz Creation (30 points)
 
 <p align="center">
   <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjlHKrBdBIO7hyuXygw_c4F1vwztHkr9cu9Rssl8c6SDEMBAJzYxsJe2IJsDqgLKU6Qx7GJRBlYqI0zvpbD_LdDbCbux_L3GSjQGX6PhHSYv8nf7-QdO4yjVMTQZr25TfnAwRnOt7NG9l4/s180-c/samurai_kettou.png" alt="Quiz Dojo" width="30%"/>
 </p>
 
-Create a `quiz.toml` file with exactly five challenging questions about vaccination strategies and transmission route removal in networks. Your quiz will be evaluated by a large language model - craft questions that require deep understanding of network immunization!
+Your second task is to create a `quiz.toml` file with exactly two challenging questions about the course material. Here’s the twist: your quiz will be taken by a large language model, not just a human grader. If you can write a question that the LLM gets wrong, you’ll pass this part of the assignment!
+
+To succeed, craft questions that are subtle, require deep understanding, or test tricky edge cases—something that might trip up even a smart AI. Each question should be clearly written in TOML format (see below), and must include a complete, correct answer. Aim for questions that go beyond surface-level facts and require careful reasoning or attention to detail.
 
 **Required format for quiz.toml:**
 ```toml
 [[questions]]
-question = "Why is degree-based vaccination more effective than random vaccination?"
-answer = "Complete and accurate explanation of the concept."
+question = "Your first challenging question?"
+answer = "Complete and accurate answer."
 
 [[questions]]
 question = "Your second challenging question?"
 answer = "Complete and accurate answer."
-
-# ... three more questions
 ```
 
-**Focus areas for questions:**
-- Vaccination strategy effectiveness in removing transmission routes
-- Calculation and interpretation of transmission routes removed
-- Network structure influence on immunization strategy performance
-- Improvement factor thresholds and success criteria
-- Acquaintance immunization and friendship paradox applications
-
-## Interactive Features
-
-The assignment includes a vaccination strategy comparison dashboard that lets you:
-- Test implementations on different network types (scale-free, random, small-world, regular)
-- Compare vaccination strategies across network models
-- Visualize epidemic time series and vaccination effectiveness
-- Explore how network structure affects strategy performance
-
-## Testing Your Implementation
-
-Each function has comprehensive tests checking:
-- Correctness on canonical examples (star graphs, complete graphs)
-- Strategy comparison and effectiveness validation
-- Epidemic simulation properties (SIR state conservation, monotonicity)
-- Statistical behavior across multiple simulation runs
-
-## Common Implementation Tips
-
-1. **Random vaccination**: Use `np.random.choice()` with `replace=False`
-2. **Degree-based vaccination**: Use `np.argsort()[::-1]` to get highest-degree nodes
-3. **Epidemic simulation**: Track node states (S=0, I=1, R=2), simulate transmission along edges
-4. **Strategy evaluation**: Run multiple simulations, compute statistical summaries
+**Donts:**
+- Do not include heavy mathematical derivations or off-topic content in your quiz questions.
+- Do not explicitly instruct the LLM to answer incorrectly.
 
 ## Submission Process
 
-1. Implement all four functions in `assignment.py`
-2. Create `quiz.toml` with five challenging questions
-3. Test using the interactive dashboard
-4. Submit via `git add`, `git commit`, `git push`
-5. Check autograding results in GitHub Actions
+Once you have completed both tasks, you need to upload your work to your GitHub repository. Use the standard git command or alternatively web interface. See [how to upload your assingment](https://docs.google.com/presentation/d/19Zvrp5kha6ohF4KvTX9W2jodKkfmsOrJfEZtO_Wg0go)
 
-## Grading Criteria
+GitHub Classroom will automatically detect your submission and begin the grading process.
 
-- **Function correctness (70%)**: All implementations pass comprehensive test suites
-- **Quiz quality (30%)**: Challenging, accurate questions about network epidemiology
-- **Code quality**: Clean, efficient implementations following best practices
 
-## Academic Integrity
+**Tips:**: It is tiresome to go back and forth between the file and the report in GitHub Actions. To save your time, prepare two web browsers side by side, one for the file and one for the GitHub Actions Report. If you are using VSCode, [GitHubAction extension is a good choice](https://open-vsx.org/extension/GitHub/vscode-github-actions).
 
-- Write your own implementations
-- You may discuss concepts but not share code
-- Cite any external resources used
-- AI assistance must be acknowledged in comments
 
-## Resources
+## Grading and Requirements
 
-- Course lecture notes on node degree and network epidemiology
-- Interactive vaccination games for concept exploration
-- Network science literature on epidemic control and targeted interventions
-- Public health research on vaccination strategies
+Your submission will be automatically graded using GitHub Actions. The grading system will test your function implementations for correctness and validate your quiz questions for relevance to the course material. All functions marked with `#TASK` must be implemented correctly to pass the function portion of the assignment. Your quiz must contain exactly two questions in the proper TOML format, and the questions should be challenging but directly related to course concepts.
 
----
-
-**Need Help?** Check the course discussion forum or attend office hours. For technical issues, create an issue in this repository.
+**Important Note on Final Grading:** The final grade shown in GitHub Actions will be taken as your final grade for this assignment. The quiz evaluation process can be stochastic, meaning that different evaluation runs may lead to slightly different results due to the AI's variability. However, if you create a well-crafted question with a correct answer, the impact of this variability is negligible. Your goal should be to create questions that are so cleverly designed that the LLM consistently gets them wrong, regardless of minor variations in the evaluation process.
