@@ -18,10 +18,17 @@ max_tokens = 1500                  # Maximum tokens in responses (increased from
 [context]
 # Context materials - URLs to fetch for providing context to the quiz model
 urls = [
-    "https://raw.githubusercontent.com/skojaku/adv-net-sci/refs/heads/main/docs/lecture-note/m04-small-world/01-concepts.qmd",
+    "https://raw.githubusercontent.com/skojaku/adv-net-sci/refs/heads/main/docs/lecture-note/m01-euler_tour/01-concepts.qmd",
+    "https://raw.githubusercontent.com/skojaku/adv-net-sci/refs/heads/main/docs/lecture-note/m01-euler_tour/04-advanced.qmd"
 ]
 
 [output]
 # Output configuration
 #results_file = "./assignment/quiz_results.json"  # Default output file for results
 verbose = false                     # Enable verbose logging
+
+# Example usage:
+# python llm_quiz_grading.py --quiz-file quiz.toml --api-key sk-xxx --config config.toml
+#
+# Configuration file values can be overridden by command line arguments:
+# python llm_quiz_grading.py --quiz-file quiz.toml --api-key sk-xxx --config config.toml --max-tokens 1000
