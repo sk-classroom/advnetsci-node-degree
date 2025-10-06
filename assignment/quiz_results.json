@@ -1,70 +1,69 @@
 {
-  "quiz_title": "Quiz",
-  "quiz_model": "google/gemma-3-4b-it",
-  "evaluator_model": "google/gemini-2.5-flash-lite",
+  "quiz_title": "Quiz Challenge",
   "total_questions": 2,
   "valid_questions": 0,
   "invalid_questions": 2,
-  "system_errors": 0,
   "student_wins": 0,
   "llm_wins": 0,
-  "student_success_rate": 0.0,
-  "student_passes": false,
-  "github_classroom_result": "STUDENTS_QUIZ_KEIKO_LOSE",
+  "success_rate": 0.0,
   "question_results": [
     {
-      "question_number": 1,
-      "question": "The Watts-Strogaz model creates the small-world networks only when the rewiring probability is greater than 0 but less than 1. True/False and describe the reason.",
-      "correct_answer": "The Wattz-Strogaz model in fact cretes a small-world networks when the network size is small. This is because the path length can be short.",
-      "llm_answer": "Question rejected during validation",
-      "is_correct": false,
-      "student_wins": false,
-      "evaluation_explanation": "INVALID QUESTION: The student's answer is factually incorrect and does not address the question asked. The context clearly states that the Watts-Strogatz model creates small-world networks for rewiring probabilities between 0 and 1, not based on network size. The answer also incorrectly states that path length is the sole determinant of small-world networks, ignoring the clustering aspect. Specific issues: The provided answer appears to be incorrect or poorly formed; The question does not relate to the provided context materials (small-world networks lecture content)",
-      "evaluation_confidence": "HIGH",
-      "validation": {
-        "valid": false,
-        "issues": [
-          "answer_quality",
-          "context_mismatch"
-        ],
-        "reason": "The student's answer is factually incorrect and does not address the question asked. The context clearly states that the Watts-Strogatz model creates small-world networks for rewiring probabilities between 0 and 1, not based on network size. The answer also incorrectly states that path length is the sole determinant of small-world networks, ignoring the clustering aspect."
+      "question": {
+        "question": "What is the friendship paradox?",
+        "answer": "The friendship paradox is the observation that most people have more friends than the average person. This is because popular friends appear more frequently in the friend list of others.",
+        "number": 1
       },
-      "error": "Validation failed: The student's answer is factually incorrect and does not address the question asked. The context clearly states that the Watts-Strogatz model creates small-world networks for rewiring probabilities between 0 and 1, not based on network size. The answer also incorrectly states that path length is the sole determinant of small-world networks, ignoring the clustering aspect. Specific issues: The provided answer appears to be incorrect or poorly formed; The question does not relate to the provided context materials (small-world networks lecture content)"
+      "llm_answer": "Question rejected during validation",
+      "is_valid": false,
+      "student_wins": false,
+      "evaluation_explanation": "Invalid student question: Context mismatch (UNRELATED): The user is asking about the \"friendship paradox\". The provided context discusses graph theory, specifically focusing on the K\u00f6nigsberg bridge problem, Eulerian paths, node degrees, and sparse matrix representations (CSR format) for large networks. There is no mention of the \"friendship paradox\" or any related concepts like average degree versus individual degree in the context. Therefore, the question is unrelated to the provided course materials.",
+      "validation_issues": [
+        "context_mismatch",
+        "context_mismatch"
+      ],
+      "revision_guidance": null,
+      "difficulty_assessment": "TOO_EASY",
+      "improvement_suggestions": [
+        "The question is about a topic not covered in the provided context. Please provide context that explains the 'friendship paradox' or revise the question to align with the existing context on graph theory concepts like node degree, Eulerian paths, or network connectivity.",
+        "The question 'What is the friendship paradox?' is unrelated to the provided context. The context focuses on graph theory concepts like Eulerian paths and sparse matrix representations. To align the question, consider asking about concepts covered in the context, such as 'What is the definition of node degree?' or 'Explain the conditions for an Eulerian circuit.'"
+      ],
+      "clarity_score": "CLEAR",
+      "student_answer_correctness": null,
+      "factual_issues": null,
+      "error": "Context mismatch (UNRELATED): The user is asking about the \"friendship paradox\". The provided context discusses graph theory, specifically focusing on the K\u00f6nigsberg bridge problem, Eulerian paths, node degrees, and sparse matrix representations (CSR format) for large networks. There is no mention of the \"friendship paradox\" or any related concepts like average degree versus individual degree in the context. Therefore, the question is unrelated to the provided course materials."
     },
     {
-      "question_number": 2,
-      "question": "What is an Euler circuits?",
-      "correct_answer": "A path that visits every edge exactly once and starts and ends at the same vertex.",
-      "llm_answer": "Question rejected during validation",
-      "is_correct": false,
-      "student_wins": false,
-      "evaluation_explanation": "INVALID QUESTION: The provided context materials discuss small-world networks, path lengths, and clustering coefficients. While the term 'path' is mentioned, 'Euler circuits' are not discussed or defined within the context. Therefore, the question is not relevant to the provided materials. Specific issues: The question does not relate to the provided context materials (small-world networks lecture content)",
-      "evaluation_confidence": "HIGH",
-      "validation": {
-        "valid": false,
-        "issues": [
-          "context_mismatch"
-        ],
-        "reason": "The provided context materials discuss small-world networks, path lengths, and clustering coefficients. While the term 'path' is mentioned, 'Euler circuits' are not discussed or defined within the context. Therefore, the question is not relevant to the provided materials."
+      "question": {
+        "question": "What is the degree of a node in a network?",
+        "answer": "The total transmission routes removed equals the sum of degrees of all vaccinated nodes. For example, if you vaccinate nodes with degrees [5, 3, 7], you remove 5+3+7=15 transmission routes. This metric is useful because: (1) It directly measures the network's transmission capacity reduction; (2) It's simple to calculate and compare across strategies; (3) It captures the intuition that removing high-degree nodes has disproportionate impact; (4) It provides a clear optimization target for vaccination strategies; (5) It scales appropriately with network size and density, making it useful for comparing strategies across different network types.",
+        "number": 2
       },
-      "error": "Validation failed: The provided context materials discuss small-world networks, path lengths, and clustering coefficients. While the term 'path' is mentioned, 'Euler circuits' are not discussed or defined within the context. Therefore, the question is not relevant to the provided materials. Specific issues: The question does not relate to the provided context materials (small-world networks lecture content)"
+      "llm_answer": "Question rejected during validation",
+      "is_valid": false,
+      "student_wins": false,
+      "evaluation_explanation": "Invalid student question: The question is valid and clearly asks for a definition. However, the provided answer does not define the degree of a node. Instead, it discusses a metric related to network analysis (transmission routes removed) and its applications in vaccination strategies, which is not a direct answer to the question.",
+      "validation_issues": [
+        "answer_quality"
+      ],
+      "revision_guidance": null,
+      "difficulty_assessment": "TOO_EASY",
+      "improvement_suggestions": [
+        "The provided answer does not define the 'degree of a node in a network.' Please provide a definition that explains what the degree of a node is in the context of network analysis."
+      ],
+      "clarity_score": "CLEAR",
+      "student_answer_correctness": null,
+      "factual_issues": null,
+      "error": "The question is valid and clearly asks for a definition. However, the provided answer does not define the degree of a node. Instead, it discusses a metric related to network analysis (transmission routes removed) and its applications in vaccination strategies, which is not a direct answer to the question."
     }
   ],
-  "validation_summary": {
-    "total_questions": 2,
-    "valid_questions": 0,
-    "invalid_questions": 2,
-    "validation_rate": 0.0,
-    "common_issues": {
-      "answer_quality": 1,
-      "context_mismatch": 2
-    },
-    "recommendations": [
-      "\ud83d\udcdd Improve answer quality: Ensure answers are accurate and well-formed",
-      "\ud83c\udfaf Align with context: Ensure questions relate to the provided materials",
-      "\ud83d\udca1 Focus on conceptual understanding rather than memorization",
-      "\ud83c\udfaf Create questions that test edge cases and subtle distinctions",
-      "\u2696\ufe0f Ensure answers are complete but concise"
-    ]
+  "feedback_summary": "No questions were successfully processed. Please check your quiz format and try again.",
+  "student_passes": false,
+  "github_classroom_result": "FAIL",
+  "similarity_analysis": {
+    "has_issues": false,
+    "duplicate_pairs": [],
+    "overlap_pairs": [],
+    "similarity_details": [],
+    "overall_assessment": "The questions cover distinct concepts within network theory. One asks about a specific paradox (friendship paradox), while the other asks for the definition of a fundamental network property (degree of a node). There is no redundancy or overlap in the knowledge tested."
   }
 }
